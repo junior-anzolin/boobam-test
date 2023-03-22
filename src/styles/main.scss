@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+$border-radius-banner: 16px;
+$theme-colors: (
+  "white": #ffffff,
+  "primary": #0b0c0c,
+  "secondary": #59595c,
+  "tertiary": #c1c0c2,
+  "border": #e3e7e8,
+  "background": #fafafa
+);
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+button {
+  border-radius: 8px !important;
+}
+
+.banner-footer {
+  color: map-get($theme-colors, "white");
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 60px;
+  width: 100%;
+  max-width: 1440px;
+  max-height: 382px;
+  background-color: map-get($theme-colors, "tertiary");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  @extend .banner-footer;
+  border-radius: $border-radius-banner $border-radius-banner 0 0;
+  height: 45vh;
+}
+
+.footer {
+  @extend .banner-footer;
+  border-radius: 0 0 $border-radius-banner $border-radius-banner;
+  height: 20vh;
+}

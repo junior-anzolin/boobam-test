@@ -1,0 +1,6 @@
+{
+  "files": ["src/scripts/main.ts"],
+  "compilerOptions": {
+    "target": "es6"
+  }
+}

@@ -1,0 +1,93 @@
+@import './main.scss';
+
+.product {
+  .image-product {
+    position: relative;
+    height: 450px;
+    width: 318px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+
+    .favorite {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      bottom: auto;
+      left: auto;
+      font-size: 18px;
+      position: absolute;
+      padding: 8px 8px 0;
+      border: none;
+      background: transparent;
+      border-radius: 100% !important;
+
+      span {
+        color: map-get($theme-colors, "secondary");
+      }
+
+      &:hover {
+        background: map-get($theme-colors, "tertiary");
+      }
+    }
+  }
+
+  .image-product-artist {
+    @extend .image-product;
+    height: auto;
+    width: 100%;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  .informations {
+    .name {
+      font-style: normal;
+      font-weight: 450;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 4px;
+      color: map-get($theme-colors, "primary");
+    }
+
+    .author {
+      font-style: normal;
+      font-weight: 450;
+      font-size: 12px;
+      line-height: 16px;
+      color: map-get($theme-colors, "secondary");
+      margin-bottom: 4px;
+    }
+
+    .amount {
+      font-style: normal;
+      font-weight: 450;
+      font-size: 12px;
+      line-height: 16px;
+      color: map-get($theme-colors, "secondary");
+    }
+  }
+}
+
+.pro {
+  &:after {
+    position: absolute;
+    content: "Pro" !important;
+    top: 1.3em;
+    left: 1.3em;
+    bottom: auto;
+    right: auto;
+    border-radius: 100px;
+    padding: 4px 9px;
+    gap: 5px;
+    background: rgba(11, 12, 12, 0.8);
+    color: map-get($theme-colors, 'white');
+    font-size: 12px;
+  }
+}
